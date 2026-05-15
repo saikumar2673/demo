@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+
+  <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>private area</web-resource-name>
+            <!-- This protects the entire folder -->
+            <url-pattern>/adminpanel/*</url-pattern>
+        </web-resource-collection>
+ 
+        <auth-constraint>
+            <role-name>student_role</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>My Protected Area</realm-name>
+    </login-config>
+    
+    
+  <servlet>
+  <servlet-name>abcd</servlet-name>
+  <servlet-class>Hello</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>abcd</servlet-name>
+    <url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>a2</servlet-name>
+  <servlet-class>MyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>a2</servlet-name>
+    <url-pattern>/hello2</url-pattern>
+  </servlet-mapping>
+  
+  <security-role>
+    <role-name>librarian_role</role-name>
+</security-role>
+  
+</web-app>
